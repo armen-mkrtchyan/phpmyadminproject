@@ -8,3 +8,16 @@
     margin-left:16px;
 }
 
+.nav-item {
+    display: flex;
+    width: 150px;
+}
+img {
+    height: 15px;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+#navbarNavAltMarkup{
+    display: flex;
+    justify-content: space-around;
+}
