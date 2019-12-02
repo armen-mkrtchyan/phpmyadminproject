@@ -4,12 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-
+    <script src="js/jquery"></script>
     <title>Hello, world!</title>
 </head>
 <body>
@@ -25,124 +25,123 @@
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <button class="nav-item nav-link " ><a href="#">Recent</a></button>
-                        <button class="nav-item nav-link " ><a href="#">Favorites</a></button>
+                            <button class="nav-item nav-link " style="width:80px;" ><a href="#">Recent</a></button>
+                        <button class="nav-item nav-link " style="width:90px; "><a href="#">Favorites</a></button>
 
                     </div>
                 </nav>
 
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    + New
-                                </button>
+                
+            </div>
+			<div class="container">
 
-                            </h2>
-                        </div>
+                <div class="collapse-group">
+                    <div class="minus_plus">
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <p><a class="btn" data-toggle="collapse" data-target="#demoout">
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-database icon" aria-hidden="true"></i>New
+                        </a></p>
+                    </div>
+                    <div class="collapse in" id="demoout">
+                        <div class="collapse-group">
+                            <div class="minus_plus">
+                                <p><a class="btn" data-toggle="collapse" data-target="#demoin">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-database icon" aria-hidden="true"></i>User
+                                </a></p>
+                            </div>
 
-                            <div class="card-body">
-
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            <div class="collapse in" id="demoin">
+                                <div class="collapse-group">
+                                    <ul class="list">
+                                        <li class="list-group"><a href="#">fdg</a></li>
+                                        <li class="list-group"><a href="#">htrh</a></li>
+                                        <li class="list-group"><a href="#">trhtr</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="minus_plus">
+                                <p><a class="btn" data-toggle="collapse" data-target="#demoin1">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-database icon" aria-hidden="true"></i>Car
+                                </a></p>
+                            </div>
+                            <div class="collapse in" id="demoin1">
+                                <div class="collapse-group">
+                                    <ul class="list">
+                                        <li class="list-group"><a href="#">a</a></li>
+                                        <li class="list-group"><a href="#">b</a></li>
+                                        <li class="list-group"><a href="#">c</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="minus_plus">
+                                <p><a class="btn" data-toggle="collapse" data-target="#demoin2">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-database icon" aria-hidden="true"></i>Friend_ID
+                                </a></p>
+                            </div>
+                            <div class="collapse in" id="demoin2">
+                                <div class="collapse-group">
+                                    <ul class="list">
+                                        <li class="list-group"><a href="#">d</a></li>
+                                        <li class="list-group"><a href="#">f</a></li>
+                                        <li class="list-group"><a href="#">f</a></li>
+                                    </ul>
+                                </div>
                             </div>
 
 
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    + information
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    + mysql
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
-            </div></div>
+
+            </div>
+
+			</div>
         <div class="col-10 px-0">
-            <div class="header">
+           
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active border-right">
-                                <img src="img/dat.png" alt="dat" class="Dat">
-                                <a class="nav-link" href="#">Database <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active border-right">
-                                <img src="img/down.png" alt="down" class="down">
-                                <a class="nav-link" href="#">SQL <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active border-right">
-                                <img src="img/stat.png" alt="stat" class="stat">
-                                <a class="nav-link" href="#">Status <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active border-right">
-                                <img src="img/user.png" alt="user" class="user">
-                                <a class="nav-link" href="#">User acounts <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active border-right">
-                                <img src="img/exp.png" alt="exp" class="exp">
-                                <a class="nav-link" href="#">Export<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active border-right">
-                                <img src="img/import.png" alt="imp" class="imp">
-                                <a class="nav-link" href="#">Import <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/set.png" alt="set" class="set">
-                                <a class="nav-link" href="#">Settings <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/bin.png" alt="bin" class="bin">
-                                <a class="nav-link" href="#">Binary log <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/rep.png" alt="rep" class="rep">
-                                <a class="nav-link" href="#">Replication <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/var.png" alt="var" class="var">
-                                <a class="nav-link" href="#">Variabls <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/char.png" alt="char" class="char">
-                                <a class="nav-link" href="#">Charsets <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/eng.png" alt="eng" class="eng">
-                                <a class="nav-link" href="#">Engines <span class="sr-only">(current)</span></a>
-                            </li><li class="nav-item active border-right">
-                                <img src="img/plug.png" alt="imp" class="imp">
-                                <a class="nav-link" href="#">Plugins<span class="sr-only">(current)</span></a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </nav>
-        </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <img src="img/dat.png" alt="dat" class="dat">
+  <div class="a1">
+  <a class="navbar-brand border-right" href="#">Databases</a>
+  </div>
+  <img src="img/sql.png" alt="sql" class="sql">
+  <div class="a2">
+  <a class="navbar-brand border-right" href="#">SQL</a>
+  </div>
+  <img src="img/user.png" alt="user" class="user">
+  <div class="a3">
+  <a class="navbar-brand border-right" href="#">User accounts</a>
+  </div>
+  <img src="img/exp.png" alt="exp" class="exp">
+  <div class="a4">
+  <a class="navbar-brand border-right" href="#">Export</a>
+  </div>
+  <img src="img/imp.png" alt="imp" class="imp">
+  <div class="a5">
+  <a class="navbar-brand border-right" href="#">Import</a>
+  </div>
+  <img src="img/set.png" alt="set" class="set">
+  <div class="a6">
+  <a class="navbar-brand border-right" href="#">Setings</a>
+  </div>
+  <img src="img/rep.png" alt="rep" class="rep">
+  <div class="a7">
+  <a class="navbar-brand border-right" href="#">Replication</a>
+  </div>
+ 
+  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+  
+ 
         </div>
     </div>
 </div>
@@ -153,6 +152,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
-<script src="javascript.js"></script>
+<script src="js/javascript.js"></script>
 </body>
 </html>
