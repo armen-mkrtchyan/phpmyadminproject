@@ -1,4 +1,7 @@
-
+*{
+    padding:0;
+    margin:0;
+}
 .logo{
     width:350px;
     height: 130px;
@@ -100,7 +103,7 @@ img {
     border-radius: 10px 10px 10px 10px;
 }
 .sec3{
-    width: 1250px;
+    width: 1249px;
     height: 50px;
 
     background-color: grey;

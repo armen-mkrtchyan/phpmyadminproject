@@ -19,13 +19,15 @@
 <div class="container-fluid px-0">
     <div class="row">
         <div class="col-2 px-0">
-            <div class="col-2 px-0">
-                <img src="img/logo.svg" alt="log" class="logo">
+            <div class="col-2 px-0 " >
+
+                <img src="img/logo.svg" alt="log" class="logo" onclick="Func1(3)">
+
             </div>
             <div class="leftbutton">
 
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav id="nav_b" class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <button class="nav-item nav-link " style="width:80px;"><a href="#">Recent</a></button>
                         <button class="nav-item nav-link " style="width:90px; "><a href="#">Favorites</a></button>
@@ -56,9 +58,9 @@
                             <div class="collapse in" id="demoin">
                                 <div class="collapse-group">
                                     <ul class="list">
-                                        <li class="list-group"><a href="#">fdg</a></li>
-                                        <li class="list-group"><a href="#">htrh</a></li>
-                                        <li class="list-group"><a href="#">trhtr</a></li>
+                                        <li class="list-group"><a href="#" onclick="Func1(0)" >fdg</a></li>
+                                        <li class="list-group"><a href="#" onclick="Func1(1)">htrh</a></li>
+                                        <li class="list-group"><a href="#" onclick="Func1(2)">trhtr</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -104,54 +106,54 @@
         </div>
         <div class="col-10 px-0">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="justify-content: space-between">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-                        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="a1 border-right">
-                    <img src="img/dat.png" alt="dat" class="dat">
-                    <a class="navbar-brand " href="#">Databases</a>
-                </div>
-                <div class="a2 border-right">
-                    <img src="img/sql.png" alt="sql" class="sql">
-                    <a class="navbar-brand" href="#">SQL</a>
-                </div>
-                <div class="a3 border-right">
-                <img src="img/user.png" alt="user" class="user">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav" style="justify-content: space-between">
+<!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"-->
+<!--                        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
+<!--                <div class="a1 border-right">-->
+<!--                    <img src="img/dat.png" alt="dat" class="dat">-->
+<!--                    <a class="navbar-brand " href="#">Databases</a>-->
+<!--                </div>-->
+<!--                <div class="a2 border-right">-->
+<!--                    <img src="img/sql.png" alt="sql" class="sql">-->
+<!--                    <a class="navbar-brand" href="#">SQL</a>-->
+<!--                </div>-->
+<!--                <div class="a3 border-right">-->
+<!--                <img src="img/user.png" alt="user" class="user">-->
 
-                    <a class="navbar-brand " href="#">User accounts</a>
-                </div>
-                <div class="a4 border-right">
-                <img src="img/exp.png" alt="exp" class="exp">
+<!--                    <a class="navbar-brand " href="#">User accounts</a>-->
+<!--                </div>-->
+<!--                <div class="a4 border-right">-->
+<!--                <img src="img/exp.png" alt="exp" class="exp">-->
 
-                    <a class="navbar-brand " href="#">Export</a>
-                </div>
-                <div class="a5 border-right">
-                <img src="img/imp.png" alt="imp" class="imp">
+<!--                    <a class="navbar-brand " href="#">Export</a>-->
+<!--                </div>-->
+<!--                <div class="a5 border-right">-->
+<!--                <img src="img/imp.png" alt="imp" class="imp">-->
 
-                    <a class="navbar-brand " href="#">Import</a>
-                </div>
-                <div class="a6 border-right">
-                <img src="img/set.png" alt="set" class="set">
+<!--                    <a class="navbar-brand " href="#">Import</a>-->
+<!--                </div>-->
+<!--                <div class="a6 border-right">-->
+<!--                <img src="img/set.png" alt="set" class="set">-->
 
-                    <a class="navbar-brand " href="#">Setings</a>
-                </div>
-                <div class="a7 ">
-                <img src="img/rep.png" alt="rep" class="rep">
+<!--                    <a class="navbar-brand " href="#">Setings</a>-->
+<!--                </div>-->
+<!--                <div class="a7 ">-->
+<!--                <img src="img/rep.png" alt="rep" class="rep">-->
 
-                    <a class="navbar-brand border-right" href="#">Replication</a>
-                </div>
+<!--                    <a class="navbar-brand border-right" href="#">Replication</a>-->
+<!--                </div>-->
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        More
-                    </a>
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
+<!--                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                        More-->
+<!--                    </a>-->
 
-                </li>
+<!--                </li>-->
             </nav>
-            <div class="container-fluid">
+            <div class="container-fluid " id="content1" >
                 <div class="row">
                     <div class="col-7">
                         <div class="General">

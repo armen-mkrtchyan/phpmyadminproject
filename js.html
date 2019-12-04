@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr1 = [100, 150, 200, 250, 300];
+    var arr2 = ["black", "blue", "pink", "yellow", "red"];
+    function qarakusi(arr1, arr2) {
+        for (let i = 0,j = 0; i < arr1.length, j < arr2.length; i++, j++) {
+            var c = document.createElement("div");
+            c.style.width = arr1[i] + "px";
+            c.style.height = arr1[i] + "px";
+            c.style.backgroundColor = arr2[j];
+            c.style.cssFloat = "left";
+            c.style.marginLeft = "10px";
+            document.body.append(c);
+        }
+    }
+    qarakusi(arr1, arr2);
+</script>
+</body>
+</html>
