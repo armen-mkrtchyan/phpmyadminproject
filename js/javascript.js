@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$/*(document).ready(function() {
     $('.mdb-select').materialSelect();
     $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
         $(this).closest('.select-outline').find('label').toggleClass('active');
         $(this).closest('.select-outline').find('.caret').toggleClass('active');
     });
-});
-$(document).ready(function(){
+});*/
+/*$(document).ready(function(){
     var count = 0
     // Toggle plus minus icon on show hide of collapse element
     $(".collapse").on('show.bs.collapse', function(){
@@ -27,7 +27,7 @@ $(document).ready(function(){
         }
         count++
     });
-});
+});*/
 
 
 var data = [
@@ -36,36 +36,37 @@ var data = [
         src:'img/dat.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'SQL',
+        src:'img/sql.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'User accounts',
+        src:'img/user.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'Export',
+        src:'img/exp.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'Import',
+        src:'img/imp.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'Variables',
+        src:'img/var.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'Setings',
+        src:'img/set.png',
     },
     {
-        name:'Databases',
-        src:'img/dat.png',
+        name:'Replication',
+        src:'img/rep.png',
     },
 ];
 
 // <div class="a1 border-right"> <img src="img/dat.png" alt="dat" class="dat"> <a class="navbar-brand " href="#">Databases</a></div>
+
 var nav = document.getElementById("nav");
 window.addEventListener('load', function(){
     for (var i = 0;i < data.length;i++){
@@ -82,11 +83,45 @@ window.addEventListener('load', function(){
        var links= document.createElement("a");
        links.setAttribute("class", "navbar-brand");
        links.setAttribute("href", "#");
+       links.setAttribute("onclick","Func1(3);");
        links.innerHTML = `${data[i].name}`;
        div.appendChild(links);
-       nav.appendChild(div)
+       nav.appendChild(div);
+	   
+
+	   
     };
 });
+
+var plus=[
+    {
+        name:'New',
+        src:'img/plus.png'
+    }
+];
+
+
+var btn = document.getElementById("new");
+var btn1 =document.createElement('button');
+btn.addEventListener("click", function(){
+    for(var j = 0; j< plus.length;j++){
+        let colaps = document.getElementById("group");
+        let div = document.createElement('div');
+        div.setAttribute('class', 'minus_plus');
+        let p = document.createElement('p');
+        div.appendChild(p);
+        let a = document.createElement('a');
+        a.setAttribute('class', 'btn');
+        a.setAttribute('data-toggle', 'collapse');
+        a.setAttribute('data-target','#demoin');
+        p.appendChild(a);
+        let i = document.createElement("i");
+        i.setAttribute('class', 'fa-database icon');
+        i.setAttribute('aria-hidden','true');
+        a.appendChild(i);
+
+    }
+})
 
 
 
@@ -128,7 +163,7 @@ function Func1(arg){
 </table>`
     }
 
-    if(arg === 2){
+    if(arg === 1){
 
         document.getElementById("content1").innerHTML =`<table class="table">
   <thead>
@@ -160,10 +195,10 @@ function Func1(arg){
   </tbody>
 </table>`
     }
-    if(arg === 3){
-        document.getElementById("content1").innerHTML=`            <div class="container-fluid " id="content1" >
+    if(arg === 2){
+        document.getElementById("content1").innerHTML=`            <div class="container-fluid remove" id="content1" >
                 <div class="row">
-                    <div class="col-7">
+                    <div class="col-7" id="rem">
                         <div class="General">
                             <div class="sec1">
                                 <p>General setings</p>
@@ -262,4 +297,12 @@ function Func1(arg){
             </div>
 `
     }
+  if(arg === 3){
+      document.getElementById("contnet1").innerHTML = `
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+     </ul> `
+  }
 }

@@ -1,12 +1,10 @@
-*{
-    padding:0;
-    margin:0;
-}
+
 .logo{
-    width:350px;
-    height: 130px;
-    margin-left:16px;
+    width: 286px;
+    height: 90px;
+    margin-left: 65px;
 }
+
 
 .nav-item {
     display: flex;
@@ -46,6 +44,7 @@ img {
 	
 	
 }
+
 .General{
     width:1250px;
     height: 200px;
@@ -191,4 +190,7 @@ img {
 }
 .ul3{
     margin-top:30px;
+}
+#rem{
+    padding: inherit;
 }
