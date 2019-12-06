@@ -1,4 +1,4 @@
-$/*(document).ready(function() {
+/*$(document).ready(function() {
     $('.mdb-select').materialSelect();
     $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
         $(this).closest('.select-outline').find('label').toggleClass('active');
@@ -93,35 +93,31 @@ window.addEventListener('load', function(){
     };
 });
 
-var plus=[
-    {
-        name:'New',
-        src:'img/plus.png'
+var acc = document.getElementsByClassName("accordion");
+var i;
+var plus = document.getElementsByClassName("fa-plus");
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+
+        this.classList.toggle("active");
+        console.log(this);
+        $(this>i).hide();
+        $(this).find('i').toggleClass('fa-minus');
+
+        var ul = this.nextElementSibling;
+
+        if (ul.style.display === "block") {
+            ul.style.display = "none";
+            //    $("").show();
+        } else {
+            ul.style.display = "block";
+
+
+
+        }
     }
-];
-
-
-var btn = document.getElementById("new");
-var btn1 =document.createElement('button');
-btn.addEventListener("click", function(){
-    for(var j = 0; j< plus.length;j++){
-        let colaps = document.getElementById("group");
-        let div = document.createElement('div');
-        div.setAttribute('class', 'minus_plus');
-        let p = document.createElement('p');
-        div.appendChild(p);
-        let a = document.createElement('a');
-        a.setAttribute('class', 'btn');
-        a.setAttribute('data-toggle', 'collapse');
-        a.setAttribute('data-target','#demoin');
-        p.appendChild(a);
-        let i = document.createElement("i");
-        i.setAttribute('class', 'fa-database icon');
-        i.setAttribute('aria-hidden','true');
-        a.appendChild(i);
-
-    }
-})
+}
 
 
 
