@@ -123,6 +123,8 @@ for (i = 0; i < acc.length; i++) {
 
 
 
+
+
 function Func1(arg){
     let container = document.getElementById("content1")
     if(arg === 0){
@@ -293,12 +295,5 @@ function Func1(arg){
             </div>
 `
     }
-  if(arg === 3){
-      document.getElementById("contnet1").innerHTML = `
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-     </ul> `
-  }
+
 }

@@ -208,10 +208,26 @@ p.accordion {
 }
 
 i.accordion , p.accordion {
-    background-color: #ddd;
+    background-color: white;
 }
 ul {
     padding: 0 18px;
     display: none;
     background-color: white;
+}
+.ul6 li{
+    list-style-type: none;
+
+}
+.ul6 li a{
+    margin-left: 8px;
+
+}
+.ul7 li{
+    list-style-type: none;
+
+}
+
+.ul7 li a{
+    margin-left: 8px;
 }
