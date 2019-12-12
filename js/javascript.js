@@ -29,95 +29,234 @@
     });
 });*/
 
+$.ajax({
+    type:'GET',
+    url:'json/nav.json',
+    dataType:'json',
+    success: function(data) {
+        console.log(nav_b);
 
-var data = [
-    {
-        name:'Databases',
-        src:'img/dat.png',
-    },
-    {
-        name:'SQL',
-        src:'img/sql.png',
-    },
-    {
-        name:'User accounts',
-        src:'img/user.png',
-    },
-    {
-        name:'Export',
-        src:'img/exp.png',
-    },
-    {
-        name:'Import',
-        src:'img/imp.png',
-    },
-    {
-        name:'Variables',
-        src:'img/var.png',
-    },
-    {
-        name:'Setings',
-        src:'img/set.png',
-    },
-    {
-        name:'Replication',
-        src:'img/rep.png',
-    },
-];
+         let nav = document.getElementById("nav");
+
+        for (let i = 0; i < data.nav_b.length; i++) {
+            console.log(i)
+                let div = document.createElement('div');
+                div.setAttribute('class','a' + i + 1 + ' border-right');
+
+
+                 let img = document.createElement('img');
+                 img.setAttribute("src",`${data.nav_b[i].src}`);
+                 img.setAttribute("alt","dat");
+                 img.setAttribute("class","dat");
+                 div.appendChild(img);
+
+                 let links= document.createElement("a");
+                 links.setAttribute("class", "navbar-brand");
+                 links.setAttribute("href", "#");
+                 links.innerHTML = `${data.nav_b[i].name}`;
+                 div.appendChild(links);
+                    nav.appendChild(div);
+
+
+    }
+
+     }
+});
+
+//
+// var data = [
+//     {
+//         name:'Databases',
+//         src:'img/dat.png',
+//     },
+//     {
+//         name:'SQL',
+//         src:'img/sql.png',
+//     },
+//     {
+//         name:'User accounts',
+//         src:'img/user.png',
+//     },
+//     {
+//         name:'Export',
+//         src:'img/exp.png',
+//     },
+//     {
+//         name:'Import',
+//         src:'img/imp.png',
+//     },
+//     {
+//         name:'Variables',
+//         src:'img/var.png',
+//     },
+//     {
+//         name:'Setings',
+//         src:'img/set.png',
+//     },
+//     {
+//         name:'Replication',
+//         src:'img/rep.png',
+//     },
+// ];
 
 // <div class="a1 border-right"> <img src="img/dat.png" alt="dat" class="dat"> <a class="navbar-brand " href="#">Databases</a></div>
 
-var nav = document.getElementById("nav");
-window.addEventListener('load', function(){
-    for (var i = 0;i < data.length;i++){
-        var div =document.createElement('div');
-        div.setAttribute('class','a' + i + 1 + ' border-right');
-
-
-        var img =document.createElement('img');
-        img.setAttribute("src",`${data[i].src}`);
-        img.setAttribute("alt","dat");
-        img.setAttribute("class","dat");
-        div.appendChild(img);
-
-       var links= document.createElement("a");
-       links.setAttribute("class", "navbar-brand");
-       links.setAttribute("href", "#");
-       links.setAttribute("onclick","Func1(3);");
-       links.innerHTML = `${data[i].name}`;
-       div.appendChild(links);
-       nav.appendChild(div);
-	   
-
-	   
-    };
-});
-
-var acc = document.getElementsByClassName("accordion");
-var i;
-var plus = document.getElementsByClassName("fa-plus");
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-
-        this.classList.toggle("active");
-        console.log(this);
-        $(this>i).hide();
-        $(this).find('i').toggleClass('fa-minus');
-
-        var ul = this.nextElementSibling;
-
-        if (ul.style.display === "block") {
-            ul.style.display = "none";
-            //    $("").show();
-        } else {
-            ul.style.display = "block";
 
 
 
+
+var leftBar = [
+    {
+        segmentName: "New",
+        src:'img/new2.png',
+        iClass: 'accordion fa fa-plus',
+        segmentData : [
+            {
+                name : "Contact",
+                src:'img/new2.png',
+                href : "#",
+
+            },
+            {
+                name : "Users",
+                src:'img/new2.png',
+                href : "#"
+            }
+        ]
+    },
+    {
+        segmentName: "DB",
+        src:'img/new2.png',
+        iClass: 'accordion fa fa-plus',
+        segmentData : [
+            {
+                name : "Contact Us",
+                src:'img/new2.png',
+                href : "#"
+            },
+            {
+                name : "Order statuses",
+                src:'img/new2.png',
+                href : "#"
+            },
+            {
+                name : "other",
+                src:'img/new2.png',
+                href : "#"
+            }
+        ]
+    },
+];
+
+let renderStyle = function() {
+    let container = document.getElementById("left-bar");
+    for (let i = 0; i < leftBar.length; i++) {
+        // create <p>
+        let p = document.createElement('p');
+        p.setAttribute('class', 'accordion');
+        // create <img>
+        let image = document.createElement('img');
+        image.setAttribute('src', leftBar[i].src);
+        p.appendChild(image);
+        // end create <img>
+
+        // Create i <i class="accordion fa fa-plus" aria-hidden="true">Db</i>
+        let icon = document.createElement('i');
+        icon.setAttribute('class', leftBar[i].iClass);
+        icon.setAttribute('aria-hidden', "true");
+        icon.innerHTML = leftBar[i].segmentName;
+        icon.setAttribute('style', 'padding-right:100px');
+        p.appendChild(icon);
+        // End create i
+
+        // Create <ul> class="panel footer-links ul6"
+        let list = document.createElement('ul');
+        list.setAttribute('class', 'panel footer-links ul6');
+
+        for(let j = 0; j < leftBar[i].segmentData.length; j++) {
+            let currentElement = leftBar[i].segmentData[j];
+            // create <li> <li><img src="img/new.png"><a href="#" onclick="Func1(0)">Contact</a></li>-->
+            let listItem = document.createElement('li');
+            // Create list image
+            let listImage  = document.createElement('img');
+            listImage.setAttribute('src', currentElement.src);
+            listItem.appendChild(listImage);
+            // End create list image
+
+            // Create a link
+            let link = document.createElement('a');
+            link.setAttribute('href', currentElement.href);
+            link.setAttribute('onclick', `Func1(${j})`);
+            link.innerHTML = currentElement.name;
+            listItem.appendChild(link);
+            // End create link
+            // end create </li>
+
+            // Append li to ul
+            list.appendChild(listItem);
+        }
+
+        p.appendChild(list);
+        // End create </ul>
+        // End create </p>
+
+        container.appendChild(p);
+        container.appendChild(list);
+
+        var acc = document.getElementsByClassName("accordion");
+        var k;
+        var plus = document.getElementsByClassName("fa-plus");
+
+        for (k = 0; k < acc.length; k++) {
+            acc[k].onclick = function(){
+
+                this.classList.toggle("active");
+
+                $(this>k).hide();
+                $(this).find('k').toggleClass('fa-minus');
+
+                var ul = this.nextElementSibling;
+
+                if (ul.style.display === "block") {
+                    ul.style.display = "none";
+                    //    $("").show();
+                } else {
+                    ul.style.display = "block";
+                }
+            }
         }
     }
-}
+};
+
+window.addEventListener('load',renderStyle);
+
+    // for(var i=0;i<pl.length;i++){
+    //     var p = document.createElement('p');
+    //     p.setAttribute('class','accordion');
+    //     var img = document.createElement('img');
+    //     img.setAttribute('src',`${pl[i].src}`);
+    //     p.appendChild(img);
+    //     var it = document.createElement('i');
+    //     it.setAttribute('style','padding-right:100px');
+    //     it.setAttribute('class','accordion fa fa-plus');
+    //     it.setAttribute('aria-hidden','true');
+    //     p.appendChild(it);
+    //     var ul1=document.createElement('ul');
+    //     ul1.setAttribute('class','panel footer-links ul6');
+    //     var li1=document.createElement('li');
+    //     ul1.appendChild(li1);
+    //     li1.appendChild(img);
+    //     var a =document.createElement('a');
+    //     a.setAttribute('href','#');
+    //     a.setAttribute('onclick','Func1(0)');
+    //     a.innerHTML=`${pl[i].name}`;
+    //     li1.appendChild(a);
+    //
+    //
+    // }
+// })
+
+
 
 
 
