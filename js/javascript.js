@@ -34,7 +34,7 @@ $.ajax({
     url:'json/nav.json',
     dataType:'json',
     success: function(data) {
-        console.log(nav_b);
+
 
          let nav = document.getElementById("nav");
 
@@ -105,130 +105,211 @@ $.ajax({
 
 
 
-var leftBar = [
-    {
-        segmentName: "New",
-        src:'img/new2.png',
-        iClass: 'accordion fa fa-plus',
-        segmentData : [
-            {
-                name : "Contact",
-                src:'img/new2.png',
-                href : "#",
+// var leftBar = [
+//     {
+//         segmentName: "New",
+//         src:'img/new2.png',
+//         iClass: 'accordion fa fa-plus',
+//         segmentData : [
+//             {
+//                 name : "Contact",
+//                 src:'img/new2.png',
+//                 href : "#",
+//
+//             },
+//             {
+//                 name : "Users",
+//                 src:'img/new2.png',
+//                 href : "#"
+//             }
+//         ]
+//     },
+//     {
+//         segmentName: "DB",
+//         src:'img/new2.png',
+//         iClass: 'accordion fa fa-plus',
+//         segmentData : [
+//             {
+//                 name : "Contact Us",
+//                 src:'img/new2.png',
+//                 href : "#"
+//             },
+//             {
+//                 name : "Order statuses",
+//                 src:'img/new2.png',
+//                 href : "#"
+//             },
+//             {
+//                 name : "other",
+//                 src:'img/new2.png',
+//                 href : "#"
+//             }
+//         ]
+//     },
+// ];
+$.ajax({
+    type:'GET',
+    url:'json/left_btn.json',
+    dataType: 'json',
+    success:function(data){
+        let container = document.getElementById("left-bar");
+        for (let i = 0; i < data.left_btn.length; i++) {
+            // create <p>
+            let p = document.createElement('p');
+            p.setAttribute('class', 'accordion');
+            // create <img>
+            let image = document.createElement('img');
+            image.setAttribute('src', data.left_btn[i].src);
+            p.appendChild(image);
+            // end create <img>
 
-            },
-            {
-                name : "Users",
-                src:'img/new2.png',
-                href : "#"
+            // Create i <i class="accordion fa fa-plus" aria-hidden="true">Db</i>
+            let icon = document.createElement('i');
+            icon.setAttribute('class', data.left_btn[i].iClass);
+            icon.setAttribute('aria-hidden', "true");
+            icon.innerHTML = data.left_btn[i].segmentName;
+            icon.setAttribute('style', 'padding-right:100px');
+            p.appendChild(icon);
+            // End create i
+
+            // Create <ul> class="panel footer-links ul6"
+            let list = document.createElement('ul');
+            list.setAttribute('class', 'panel footer-links ul6');
+
+            for(let j = 0; j < data.left_btn[i].segmentData; j++) {
+                let currentElement = data.left_btn[i].segmentData[j];
+                // create <li> <li><img src="img/new.png"><a href="#" onclick="Func1(0)">Contact</a></li>-->
+                let listItem = document.createElement('li');
+                // Create list image
+                let listImage  = document.createElement('img');
+                listImage.setAttribute('src', currentElement.src);
+                listItem.appendChild(listImage);
+                // End create list image
+
+                // Create a link
+                let link = document.createElement('a');
+                link.setAttribute('href', currentElement.href);
+                link.setAttribute('onclick', `Func1(${j})`);
+                link.innerHTML = currentElement.name;
+                listItem.appendChild(link);
+                // End create link
+                // end create </li>
+
+                // Append li to ul
+                list.appendChild(listItem);
             }
-        ]
-    },
-    {
-        segmentName: "DB",
-        src:'img/new2.png',
-        iClass: 'accordion fa fa-plus',
-        segmentData : [
-            {
-                name : "Contact Us",
-                src:'img/new2.png',
-                href : "#"
-            },
-            {
-                name : "Order statuses",
-                src:'img/new2.png',
-                href : "#"
-            },
-            {
-                name : "other",
-                src:'img/new2.png',
-                href : "#"
-            }
-        ]
-    },
-];
 
-let renderStyle = function() {
-    let container = document.getElementById("left-bar");
-    for (let i = 0; i < leftBar.length; i++) {
-        // create <p>
-        let p = document.createElement('p');
-        p.setAttribute('class', 'accordion');
-        // create <img>
-        let image = document.createElement('img');
-        image.setAttribute('src', leftBar[i].src);
-        p.appendChild(image);
-        // end create <img>
+            p.appendChild(list);
+            // End create </ul>
+            // End create </p>
 
-        // Create i <i class="accordion fa fa-plus" aria-hidden="true">Db</i>
-        let icon = document.createElement('i');
-        icon.setAttribute('class', leftBar[i].iClass);
-        icon.setAttribute('aria-hidden', "true");
-        icon.innerHTML = leftBar[i].segmentName;
-        icon.setAttribute('style', 'padding-right:100px');
-        p.appendChild(icon);
-        // End create i
+            container.appendChild(p);
+            container.appendChild(list);
 
-        // Create <ul> class="panel footer-links ul6"
-        let list = document.createElement('ul');
-        list.setAttribute('class', 'panel footer-links ul6');
+            var acc = document.getElementsByClassName("accordion");
+            var k;
+            var plus = document.getElementsByClassName("fa-plus");
 
-        for(let j = 0; j < leftBar[i].segmentData.length; j++) {
-            let currentElement = leftBar[i].segmentData[j];
-            // create <li> <li><img src="img/new.png"><a href="#" onclick="Func1(0)">Contact</a></li>-->
-            let listItem = document.createElement('li');
-            // Create list image
-            let listImage  = document.createElement('img');
-            listImage.setAttribute('src', currentElement.src);
-            listItem.appendChild(listImage);
-            // End create list image
+            for (k = 0; k < acc.length; k++) {
+                acc[k].onclick = function(){
+                    this.classList.toggle("active");
+                    $(this>k).hide();
+                    $(this).find('k').toggleClass('fa-minus');
 
-            // Create a link
-            let link = document.createElement('a');
-            link.setAttribute('href', currentElement.href);
-            link.setAttribute('onclick', `Func1(${j})`);
-            link.innerHTML = currentElement.name;
-            listItem.appendChild(link);
-            // End create link
-            // end create </li>
+                    var ul = this.nextElementSibling;
 
-            // Append li to ul
-            list.appendChild(listItem);
-        }
-
-        p.appendChild(list);
-        // End create </ul>
-        // End create </p>
-
-        container.appendChild(p);
-        container.appendChild(list);
-
-        var acc = document.getElementsByClassName("accordion");
-        var k;
-        var plus = document.getElementsByClassName("fa-plus");
-
-        for (k = 0; k < acc.length; k++) {
-            acc[k].onclick = function(){
-
-                this.classList.toggle("active");
-
-                $(this>k).hide();
-                $(this).find('k').toggleClass('fa-minus');
-
-                var ul = this.nextElementSibling;
-
-                if (ul.style.display === "block") {
-                    ul.style.display = "none";
-                    //    $("").show();
-                } else {
-                    ul.style.display = "block";
+                    if (ul.style.display === "none") {
+                        ul.style.display = "block";
+                        //    $("").show();
+                    } else {
+                        ul.style.display = "none";
+                    }
                 }
             }
         }
     }
-};
+});
+// let renderStyle = function() {
+//     let container = document.getElementById("left-bar");
+//     for (let i = 0; i < leftBar.length; i++) {
+//         // create <p>
+//         let p = document.createElement('p');
+//         p.setAttribute('class', 'accordion');
+//         // create <img>
+//         let image = document.createElement('img');
+//         image.setAttribute('src', leftBar[i].src);
+//         p.appendChild(image);
+//         // end create <img>
+//
+//         // Create i <i class="accordion fa fa-plus" aria-hidden="true">Db</i>
+//         let icon = document.createElement('i');
+//         icon.setAttribute('class', leftBar[i].iClass);
+//         icon.setAttribute('aria-hidden', "true");
+//         icon.innerHTML = leftBar[i].segmentName;
+//         icon.setAttribute('style', 'padding-right:100px');
+//         p.appendChild(icon);
+//         // End create i
+//
+//         // Create <ul> class="panel footer-links ul6"
+//         let list = document.createElement('ul');
+//         list.setAttribute('class', 'panel footer-links ul6');
+//
+//         for(let j = 0; j < leftBar[i].segmentData.length; j++) {
+//             let currentElement = leftBar[i].segmentData[j];
+//             // create <li> <li><img src="img/new.png"><a href="#" onclick="Func1(0)">Contact</a></li>-->
+//             let listItem = document.createElement('li');
+//             // Create list image
+//             let listImage  = document.createElement('img');
+//             listImage.setAttribute('src', currentElement.src);
+//             listItem.appendChild(listImage);
+//             // End create list image
+//
+//             // Create a link
+//             let link = document.createElement('a');
+//             link.setAttribute('href', currentElement.href);
+//             link.setAttribute('onclick', `Func1(${j})`);
+//             link.innerHTML = currentElement.name;
+//             listItem.appendChild(link);
+//             // End create link
+//             // end create </li>
+//
+//             // Append li to ul
+//             list.appendChild(listItem);
+//         }
+//
+//         p.appendChild(list);
+//         // End create </ul>
+//         // End create </p>
+//
+//         container.appendChild(p);
+//         container.appendChild(list);
+//
+//         var acc = document.getElementsByClassName("accordion");
+//         var k;
+//         var plus = document.getElementsByClassName("fa-plus");
+//
+//         for (k = 0; k < acc.length; k++) {
+//             acc[k].onclick = function(){
+//
+//                 this.classList.toggle("active");
+//
+//                 $(this>k).hide();
+//                 $(this).find('k').toggleClass('fa-minus');
+//
+//                 var ul = this.nextElementSibling;
+//
+//                 if (ul.style.display === "block") {
+//                     ul.style.display = "none";
+//                     //    $("").show();
+//                 } else {
+//                     ul.style.display = "block";
+//                 }
+//             }
+//         }
+//     }
+// };
 
-window.addEventListener('load',renderStyle);
+//window.addEventListener('load',renderStyle);
 
     // for(var i=0;i<pl.length;i++){
     //     var p = document.createElement('p');

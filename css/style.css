@@ -162,10 +162,10 @@ img {
     margin-left: 10px;
     padding-top: 5px;
 }
-.ul1{
+.ula{
     margin-top:20px;
 }
-.ul2{
+.ulb{
     margin-top:30px;
 }
 .leftlinks3{
@@ -188,7 +188,7 @@ img {
     margin-left: 10px;
     padding-top: 5px;
 }
-.ul3{
+.ulc{
     margin-top:30px;
 }
 #rem{
@@ -210,7 +210,7 @@ p.accordion {
 i.accordion , p.accordion {
     background-color: white;
 }
-ul {
+ul{
     padding: 0 18px;
     display: none;
     background-color: white;

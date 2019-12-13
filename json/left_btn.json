@@ -1,0 +1,46 @@
+{
+  "left_btn": [
+    {
+      "segmentName": "New",
+      "src":"img/new2.png",
+      "iClass": "accordion fa fa-plus",
+      "segmentData ": [
+        {
+          "name" : "Contact",
+          "src":"img/new2.png",
+          "href" : "#"
+
+        },
+        {
+          "name" : "Users",
+          "src":"img/new2.png",
+          "href" : "#"
+        }
+      ]
+    },
+    {
+      "segmentName": "DB",
+      "src":"img/new2.png",
+      "iClass": "accordion fa fa-plus",
+      "segmentData" : [
+        {
+          "name" : "Contact Us",
+          "src":"img/new2.png",
+          "href" : "#"
+        },
+        {
+          "name" : "Order statuses",
+          "src":"img/new2.png",
+          "href" : "#"
+        },
+        {
+          "name" : "other",
+          "src":"img/new2.png",
+          "href ": "#"
+        }
+      ]
+    }
+  ]
+
+
+}
